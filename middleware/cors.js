@@ -1,7 +1,7 @@
 const cors = require("cors");
 
 const setCors = (req, callback) => {
-	const allowedUrl = "https://moonlit-jelly-3e4e08.netlify.app/";
+	const allowedUrl = "https://moonlit-jelly-3e4e08.netlify.app";
 	let corsOptions;
 
 	if (allowedUrl.includes(req.header("Origin"))) {
