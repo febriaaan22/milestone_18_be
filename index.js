@@ -15,7 +15,7 @@ const app = express();
 dbConnection();
 applyCors(app);
 applyHelmet(app);
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(databaseMddleware);
 
