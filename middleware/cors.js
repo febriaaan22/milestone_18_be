@@ -1,7 +1,7 @@
 const cors = require("cors");
 
 const setCors = (req, callback) => {
-	const allowedUrl = "http://localhost:5173/";
+	const allowedUrl = "https://moonlit-jelly-3e4e08.netlify.app/";
 	let corsOptions;
 
 	if (allowedUrl.includes(req.header("Origin"))) {
