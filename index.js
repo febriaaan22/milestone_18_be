@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 const { applyHelmet } = require("./middleware/helmet.js");
 const databaseMddleware = require("./middleware/database-middleware.js");
 const authMiddleware = require("./middleware/authentication-middleware.js");
@@ -15,7 +15,7 @@ const app = express();
 dbConnection();
 applyCors(app);
 applyHelmet(app);
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(databaseMddleware);
 
