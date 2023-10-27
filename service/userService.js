@@ -81,7 +81,7 @@ const login = async (req, res) => {
 				console.log(accessToken);
 				res.cookie("accessToken", accessToken, {
 					httpOnly: true,
-					secure: false,
+					secure: true,
 					maxAge: 1 * 60 * 60 * 1000,
 				});
 				console.log(refreshToken);
