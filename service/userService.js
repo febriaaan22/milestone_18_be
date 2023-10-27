@@ -82,12 +82,13 @@ const login = async (req, res) => {
 				res.cookie("accessToken", accessToken, {
 					httpOnly: true,
 					secure: true,
+					sameSite: "None",
 					maxAge: 1 * 60 * 60 * 1000,
 				});
 				console.log(refreshToken);
 				res.cookie("refreshToken", refreshToken, {
 					httpOnly: true,
-					secure: true,
+					secure: false,
 					maxAge: 7 * 24 * 60 * 60 * 1000,
 				});
 				res.json("Success Login");
