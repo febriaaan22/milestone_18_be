@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
 
 app.use(databaseMddleware);
 
-app.use("/todo", authMiddleware, todoRouter);
 app.use("/user", userRouter);
+app.use("/todo", authMiddleware, todoRouter);
 
 app.listen(3000, () => console.log("Server is running on port 3000"));
 
