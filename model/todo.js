@@ -11,6 +11,12 @@ const todoSchema = new mongoose.Schema({
 		enum: ["Not Started", "On Progress", "Done"],
 		required: true,
 	},
+	priority: {
+		type: String,
+		default: "Low",
+		enum: ["Low", "Medium", "High"],
+		required: true,
+	},
 	date: {
 		type: Date,
 		required: true,

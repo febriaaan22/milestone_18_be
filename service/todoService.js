@@ -20,7 +20,7 @@ const getTodos = async (req, res) => {
 };
 
 const createTodos = async (req, res) => {
-	const { title, progress, date } = req.body;
+	const { title, progress, priority, date } = req.body;
 
 	const owner = req.user.id;
 	console.log(owner);
@@ -29,6 +29,7 @@ const createTodos = async (req, res) => {
 		const newTodo = new Todo({
 			title,
 			progress,
+			priority,
 			date,
 			createdBy: owner,
 		});
@@ -54,7 +55,7 @@ const updateTodos = async (req, res) => {
 
 		const updatedTodos = await Todo.findOneAndUpdate(
 			{ _id: id },
-			{ progress, date },
+			{ progress, priority, date },
 			{ new: true }
 		);
 
