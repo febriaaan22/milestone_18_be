@@ -46,7 +46,7 @@ const createTodos = async (req, res) => {
 const updateTodos = async (req, res) => {
 	try {
 		const id = req.params.id;
-		const { progress, date } = req.body;
+		const { progress, priority, date } = req.body;
 
 		const todo = await Todo.findById(id);
 		if (!todo) {
